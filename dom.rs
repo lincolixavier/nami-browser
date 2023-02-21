@@ -1,17 +1,16 @@
 use std::collections::HashMap;
-use std::fs;
 
 #[derive(Debug)]
-struct Element{
-    tag: String,
-    attributes: HashMap<String, String>,
-    children: Vec<Element>
+pub struct Element{
+    pub tag: String,
+    pub attributes: HashMap<String, String>,
+    pub children: Vec<Element>
 }
 
-fn parser_html(html: &str) -> Element {
+pub fn parse_html(html: &str) -> Element {
     let mut root = Element {
         tag: String::new(),
-        attribute: HashMap::new(),
+        attributes: HashMap::new(),
         children: Vec::new(),
     };
     let mut current_element = &mut root;
@@ -46,7 +45,7 @@ fn parser_html(html: &str) -> Element {
                     attribute_value = String::new(); 
                 }
             }
-            '\'' | '"' if in_tag =>  escape_next = true;
+            '\'' | '"' if in_tag => { escape_next = true } 
             '=' if in_tag => {
                 attribute_value = String::new();
             }
@@ -71,16 +70,3 @@ fn parser_html(html: &str) -> Element {
     }
     root
 }
-
-
-
-fn main() {
-    let html = "<html><head><title>Nami!</title></head><body><h1>Olá Nami!</h1></body></html>";
-    //let html = fs::read_to_string("path/to/file.html").expect("Erro ao ler o arquivo HTML");
-    let root = parse_html(html);
-    println!("{:#?}", root);
-}
-
-
-
-

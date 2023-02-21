@@ -3,6 +3,10 @@ name = "nami-browser"
 version = "0.0.1"
 authors = ["Lincoli Xavier <hello@lincolixavier.com>"]
 
+
 [[bin]]
 name = "nami-browser"
 path = "main.rs"
+
+[dependencies]
+gtk = "0.17.0"
