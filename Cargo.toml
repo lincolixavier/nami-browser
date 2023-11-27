@@ -10,3 +10,5 @@ path = "main.rs"
 
 [dependencies]
 gtk = "0.17.0"
+native-tls = "0.2"
+url = "2.5.0"

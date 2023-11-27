@@ -1,6 +1,6 @@
 use url::Url;
 
-fn parse_url(input: &str) -> Result<(String, String, u16, String), url::ParseError> {
+pub fn parse_url(input: &str) -> Result<(String, String, u16, String), url::ParseError> {
     let url = Url::parse(input)?;
     let scheme = url.scheme();
     let host = url.host_str().unwrap();

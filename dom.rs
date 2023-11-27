@@ -19,7 +19,6 @@ pub fn parse_html(html: &str) -> Element {
     let mut attribute_name = String::new();
     let mut attribute_value =  String::new();
     let mut escape_next = false;
-
     for character in html.chars(){
         match character {
             '>' if in_tag => {

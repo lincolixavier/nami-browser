@@ -1,13 +1,12 @@
 extern crate native_tls;
-extern crate url;
 
 use native_tls::TlsConnector;
+
 use std::io::{self, Read};
-use url::Url;
 
-fn connect() {
+pub fn connect(host: &str, port: &i16) {
     let connector = TlsConnector::new().unwrap();
-
+    
     let stream = connector
         .connect(host, port)
         .expect("Failed to connect to host");
