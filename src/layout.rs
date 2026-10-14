@@ -1,6 +1,6 @@
 //! Layout em bloco + quebra de linha por largura (caracteres).
 
-use crate::parser::Element;
+use crate::html::Element;
 
 pub fn is_block_tag(tag: &str) -> bool {
     matches!(

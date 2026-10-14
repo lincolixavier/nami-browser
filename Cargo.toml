@@ -1,15 +1,7 @@
 [package]
 name = "nami-browser"
-version = "0.0.1"
+version = "0.1.0"
 edition = "2021"
 authors = ["Lincoli Xavier <hello@lincolixavier.com>"]
 
-
-[[bin]]
-name = "nami-browser"
-path = "main.rs"
-
 [dependencies]
-gtk = "0.17.0"
-native-tls = "0.2"
-url = "2.5.0"
